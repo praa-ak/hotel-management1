@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('room_id')->constrained('rooms')->onDelete('cascade');
             $table->integer('number_of_people');
             $table->integer('number_of_nights');
+            $table->integer('advance_payment')->default(0);
             $table->integer('total_amount');
             $table->date('checkin_date');
             $table->boolean('is_checked_out')->default(false);

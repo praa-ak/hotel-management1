@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('billings', function (Blueprint $table) {
+        Schema::create('restaurant_billings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
+            $table->integer('total_amount');
+            $table->string('payment_method');
+            $table->string('payment_status')->default('pending');
             $table->timestamps();
         });
     }
