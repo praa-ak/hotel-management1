@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone');
             $table->string('address');
+            $table->string('id_proof');
             $table->string('id_card_number')->unique();
             $table->timestamps();
         });

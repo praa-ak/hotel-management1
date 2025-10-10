@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('room_billings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('checkin_id')->constrained('checkins')->onDelete('cascade');
+            $table->integer('discount')->default(0);
+            $table->integer('total_amount');
+            $table->string('payment_method');
+            $table->string('payment_status')->default('pending');
             $table->timestamps();
         });
     }

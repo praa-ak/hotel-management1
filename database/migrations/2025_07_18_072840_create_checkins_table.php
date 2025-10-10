@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('checkins', function (Blueprint $table) {
             $table->id();
             $table->foreignId('guest_id')->constrained('guests')->onDelete('cascade');
-            $table->foreignId('room_id')->constrained('rooms')->onDelete('cascade');
             $table->integer('number_of_people');
             $table->integer('number_of_nights');
             $table->integer('advance_payment')->default(0);
