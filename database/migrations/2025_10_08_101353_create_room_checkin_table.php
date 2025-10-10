@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('room_id')->constrained('rooms')->onDelete('cascade');
             $table->foreignId('checkin_id')->constrained('checkins')->onDelete('cascade');
             $table->date('assigned_date');
-            $table->date('vacated_date')->nullable();
+            $table->date('vacated_date')->nullable(); 
             $table->timestamps();
         });
     }
